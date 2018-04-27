@@ -1,0 +1,26 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span>{{title}}</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<!-- THIS NGFOR DIRECTIVE DISPLAYS OUR PUBLIC HOLIDAYS AND SETS CLICK EVENT HANDLERS ON EACH ONE SO WE CAN ROUTE -->
+<div *ngFor="let holiday of holidays; let i = index"
+     (click)="onHolidayClick($event,i)">
+  <div class="holiday-item">
+    <span>{{i+1}}</span>
+    <button mat-button>{{holiday.name}}</button>
+  </div>
+</div>
+
+<mat-toolbar>
+  <mat-toolbar-row class="mat-row">
+      <p>Holiday Name:  {{holidays[selectedHoliday].name}}</p>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="mat-row">
+      <p>Holiday Date:  {{holidays[selectedHoliday].date}}</p>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="mat-row">
+      <p>Date Observed: {{holidays[selectedHoliday].observed}}</p>
+  </mat-toolbar-row>
+</mat-toolbar>
