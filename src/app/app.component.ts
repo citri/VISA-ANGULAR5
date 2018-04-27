@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { WebapiService } from './services/webapi.service';
 import * as _ from 'lodash';
 
@@ -10,7 +11,8 @@ import * as _ from 'lodash';
 export class AppComponent implements OnInit, AfterViewInit {
 
   // DEPENDENCY INJECTION OF OUR WEB API SERVICE
-  constructor(private webApiService: WebapiService ) {
+  constructor(private router: Router,
+              private webApiService: WebapiService ) {
 
   }
 
@@ -23,6 +25,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   public onHolidayClick(event: MouseEvent, index: number): void {
     console.log('clicked on holiday ' + this.holidays[index].name);
     this.selectedHoliday = index;
+
+    //this.router.navigateByUrl('/holiday-detail');
   }
 
   // LIFE CYCLE HOOKS
