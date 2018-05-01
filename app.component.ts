@@ -60,10 +60,10 @@ export class AppComponent implements OnInit, AfterViewInit {
     // BUILD A LIST OF THE PUBLICLY OBSERVED HOLIDAYS
     let i = 0;
     for (let key in data.holidays) {
-      console.log(key + '=' + data.holidays[key]);
+      console.log(`${key} = ${data.holidays[key]}`);
       for ( let subkey in data.holidays[key] ) {
         if ( data.holidays[key][subkey].public == true ) {
-          console.log(subkey + '=' + data.holidays[key][subkey].name);
+          console.log(`${subkey} = ${data.holidays[key][subkey].name}`);
           this.holidays.push(_.cloneDeep(data.holidays[key][subkey]));
           i++;
         }
