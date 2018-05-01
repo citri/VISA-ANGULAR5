@@ -62,7 +62,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     for (let key in data.holidays) {
       console.log(key + '=' + data.holidays[key]);
       for ( let subkey in data.holidays[key] ) {
-
         if ( data.holidays[key][subkey].public == true ) {
           console.log(subkey + '=' + data.holidays[key][subkey].name);
           this.holidays.push(_.cloneDeep(data.holidays[key][subkey]));
