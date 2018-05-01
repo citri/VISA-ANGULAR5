@@ -40,7 +40,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       .subscribe(
         (holidayData) => this.onHolidayDataLoaded(holidayData),
         err => {
-          this.onHolidayError(err);
+          this.onHolidayDataError(err);
         });
   }
 
@@ -49,7 +49,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   // HTTP REQUEST ERROR
-  private onHolidayError(err: string): void {
+  private onHolidayDataError(err: string): void {
     console.log(err);
   }
 
